@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyProject</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">David's Mane</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="gallery.html" style="color: #e67e22;">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="btn">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery-hero">
+        <h1>Our Gallery</h1>
+        <p>Browse through our collection of stunning dreadlock transformations, styles, and  creative work</p>
+    </section>
+
+    <div class="filter-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="installation">Installation</button>
+            <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+            <button class="filter-btn" data-filter="styling">Styling</button>
+            <button class="filter-btn" data-filter="men">Men's Styles</button>
+            <button class="filter-btn" data-filter="women">Women's Styles</button>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+
+            <div class="gallery-item large" data-category="insatllation women">
+                <img src="Fauxlocs_(1).jpg" alt="New Dreadlock Installation">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Insatllation</div>
+                    <p>Beautiful starter locks for natural hair</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="maintenance men">
+                <img src="afro.jpg" alt="Dreadlock maintenance">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Maintenance</div>
+                    <p>Proffesional retightening session</p>
+                </div>
+            </div>
+
+            <div class="gallery-item wide" data-category="styling women">
+                <img src="pinterest 2.jpg" alt="Dreadlock Wedding Style">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Styling</div>
+                    <p>Elegant updo for a wedding ceremony</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="maintenance women">
+                <img src="17_Daring_Dreadlock_Hairstyles_for_a_Bold_and_Unforgettable_Look.jpg" alt="Colored Dreadlocks">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Maintenance</div>
+                    <p>Vibrant color maintenance and care</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="styling men">
+                <img src="7_CHIC~1.JPG" alt="Men's dreadlock style">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Men's Styles</div>
+                    <p>Sharp style with detailed maintenance</p>
+                </div>
+            </div>
+
+            <div class="gallery-item large" data-category="insatllation men">
+                <img src="pinterest_1753884307578(1)(1).jpg" alt="mens Dreadlock Installation">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Insatllation</div>
+                    <p>Complete installation process</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="styling women">
+                <img src="pinterest(1).jpg" alt="Creative Dreadlock style">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Styling</div>
+                    <p>Creative and unique style design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="maintenance women">
+                <img src="pinterest_1753883956497.jpg" alt="Dreadlock Conditioning">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Maintenance</div>
+                    <p>Deep conditioning treatment</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="insatllation women">
+                <img src="pinterest_1753883863061(1)(1).jpg" alt="Sisterlocks Installation">
+                <div class="gallery-overlay">
+                    <div class="gallery-category">Insatllation</div>
+                    <p>Proffesional Sisterlocks installation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">&times;</button>
+        <button class="nav-btn prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <button class="nav-btn next-btn" onclick="changeImage(1)">&#10094;</button>
+    </div>
+
+    <section class="cta-section">
+        <h2>Inspired by what you see?</h2>
+        <p>Book your appointment and let us create something beautiful for you</p>
+        <a href="contact.html" class="btn">Book Your Session</a>
+    </section>
+
+    <footer>
+        <p>David's Mane Dreadlock Salon &copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const filterButtons = document.querySelector('.filter-btn');
+        const galleryItems = document.querySelectorAll('gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                        item.style.display = 'block';
+                    } else{
+                        item.style.display = 'none'
+                    }
+                });
+            });
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementByid('lightbox-img');
+        const lightboxCaption = document.getElementByid('lightbox-caption');
+        let currentImageIdex = 0;
+        const images =[];
+
+        galleryItems.forEach((item, index) => {
+            const img = item.querSector('img');
+            const caption = item.querySelector('gallery-overplay p').textContent;
+            images.push({ src: img.src, alt: img.alt, caption: caption});
+
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = images[index].src;
+            lightboxcaption.textContent = images[index].caption;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow ='hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageindex = (currentImageIndex + direction + images.length) % images.length;
+            lightboxImg.src = [currentImageindex].src;
+            lightboxCaption.textContent = images[currentImageIndex].caption;
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === light) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === flex) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key ===ArrowRight) changeImage(1);
+            }
+        });
+    </script>
+</body>
+</html>

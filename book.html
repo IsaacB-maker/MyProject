@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyProject</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">David's Mane</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="book.html" style="color: #e67e22;">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Book Your Appiontment</h1>
+        <p>Ready to transform your look? Schedule your consultation or service with our expert locations.</p>
+    </section>
+
+    <div class="contact-container">
+        <div class="booing-form">
+            <h2 class="form-title">Schedule Your Visit</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="service">Select-Service *</label>
+                    <select name="service" id="service" required>
+                        <option value="">Choose a service...</option>
+                        <option value="consultation">Free Consultation</option>
+                        <option value="installation">StarterLocks Installation</option>
+                        <option value="maitenance">Maintenance &Retightening</option>
+                        <option value="Repair & Restoratin"></option>
+                        <option value="styling">Styling & Cutting</option>
+                        <option value="washing">Deep Cleaning & Conditioning</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Prefered Date *</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Prefered Time *</label>
+                    <select name="time" id="time" required>
+                        <option value="">Select  time...</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">13:00 PM</option>
+                        <option value="14:00">14:00 PM</option>
+                        <option value="15:00">15;00 PM</option>
+                        <option value="16:00"> 16:00 PM</option>
+                        <option value="17:00">17:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hair-length">Current Hair Length</label>
+                    <select name="hair-length" id="hair-length">
+                        <option value="">Select length...</option>
+                        <option value="short">Short (Chin length or shorter)</option>
+                        <option value="medium">Medium (Shoulder Length)</option>
+                        <option value="long">Long (Below shoulders)</option>
+                        <option value="very-long">Very Long (Mid-back or longer)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Special requests or Notes</label>
+                    <textarea name="message" id="message" placeholder="Tell us about your hair type, any prvious treatments, or specific requests..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Book Appointment</button>
+                <p class="form-note">* We'll confirm your appointment via email within 24 hours.</p>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <div class="info-icon">p</div>
+            <div class="info-content">
+                <h3>Visit Us</h3>
+                <p>123 Dreadlock Avenue</p>
+                <p>Create District, City 10001</p>
+            </div>
+
+            <div class="info-icon">c</div>
+            <div class="info-content">
+                <h3>Call Us</h3>
+                <p><a href="tell:+25677963827">+1 (256) 779693827</a></p>
+                <p>Text messages welcome</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-icon">M</div>
+            <div class="info-content">
+                <h3>Email Us</h3>
+                <p><a href="mailto:info@david'smane.com">info@david'smane.com</a></p>
+                <p>General inquiries</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-icon">...</div>
+            <div class="info-content">
+                <h3>Social Media</h3>
+                <p><a href="#">Instagram</a> . <a href="#">Facebook</a></p>
+                <p>DM us for quick questions</p>
+            </div>
+        </div>
+
+        <div class="hours-section">
+            <h3 style="color: #e67e22; margin-bottom: 1rem;">Business Hours</h3>
+            <table class="hours-table">
+                <tr>
+                    <td>Monday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Tuesday - Friday</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM - 4:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <h2 class="map-title">Find Our Salon</h2>
+        <div class="map-container">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>
